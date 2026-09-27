@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // The same as "imports" in package.json. The shadcn-svelte CLI reads its aliases from here.
+    "paths": {
+      "#ui/*": ["./src/components/*"],
+      "#lib/*": ["./src/lib/*"]
+    }
+  },
+  "include": ["src"]
+}

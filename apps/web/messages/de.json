@@ -1,0 +1,66 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "app_name": "Todos",
+  "app_demo": "Eine Demo von SHiFT",
+  "language": "Sprache",
+  "settings": "Einstellungen",
+  "done": "Fertig",
+  "menu": "Menü",
+  "search": "Suchen",
+  "sidebar_pages": "Seiten",
+  "no_results": "Keine Ergebnisse",
+  "appearance": "Darstellung",
+  "theme_system": "Automatisch",
+  "theme_light": "Hell",
+  "theme_dark": "Dunkel",
+  "not_found_title": "Seite nicht gefunden",
+  "not_found_body": "Unter dieser Adresse gibt es nichts.",
+  "error_title": "Etwas ist schiefgelaufen",
+  "error_body": "Der Server konnte diese Anfrage nicht verarbeiten. Versuch es noch einmal.",
+  "error_home": "Zurück zu Heute",
+  "tab_today": "Heute",
+  "tab_calendar": "Kalender",
+  "tab_lists": "Listen",
+  "smart_today": "Heute",
+  "smart_scheduled": "Geplant",
+  "smart_all": "Alle",
+  "smart_flagged": "Markiert",
+  "smart_completed": "Erledigt",
+  "my_lists": "Meine Listen",
+  "overdue": "Überfällig",
+  "new_task": "Neue Aufgabe",
+  "new_list": "Neue Liste",
+  "list_name": "Name",
+  "list_name_invalid": "Gib der Liste einen Namen mit bis zu 60 Zeichen.",
+  "list_color": "Farbe",
+  "list_icon": "Symbol",
+  "create": "Erstellen",
+  "cancel": "Abbrechen",
+  "nothing_today": "Heute steht nichts an.",
+  "nothing_here": "Keine Aufgaben.",
+  "completed_count": [
+    {
+      "declarations": [
+        "input count",
+        "local n = count: plural"
+      ],
+      "selectors": [
+        "n"
+      ],
+      "match": {
+        "n=one": "{count} erledigt",
+        "n=other": "{count} erledigt"
+      }
+    }
+  ],
+  "task_completed": "„{title}“ erledigt",
+  "undo": "Rückgängig",
+  "complete_task": "Abhaken",
+  "reopen_task": "Als offen markieren",
+  "repeats": "Wiederholt sich",
+  "flagged": "Markiert",
+  "priority_label": "Priorität",
+  "about": "Info",
+  "about_source": "Quellcode",
+  "about_footer": "Todos ist eine Demo-App für SHiFT, einen Open-Source-Stack: Svelte auf dem Server gerendert, HTMX und Islands, auf Effect. Aufgaben liegen im Speicher und sind nach einem Neustart des Servers weg."
+}

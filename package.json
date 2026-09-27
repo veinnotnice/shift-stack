@@ -1,0 +1,23 @@
+{
+  "name": "shift-stack",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@10.33.4",
+  "scripts": {
+    "dev": "pnpm --filter @testin/web dev",
+    "dev:minimal": "pnpm --filter @shift-stack/minimal dev",
+    "build": "pnpm --filter @testin/web build",
+    "start": "pnpm --filter @testin/web start",
+    "check": "pnpm -r check",
+    "test": "pnpm -r test",
+    "e2e": "pnpm --filter @shift-stack/e2e e2e"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.2"
+  }
+}

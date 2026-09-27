@@ -1,0 +1,30 @@
+{
+  "name": "@shift-stack/minimal",
+  "description": "The smallest useful SHiFT app: two pages, a form that answers in place, one island. Tailwind, nothing else.",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#app/*": "./src/*"
+  },
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/server/dev.ts",
+    "build": "vite build && vite build --ssr src/server/prod.ts --outDir dist/server",
+    "start": "node dist/server/prod.js",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.97.2",
+    "@effect/platform-node": "^0.108.2",
+    "effect": "^3.22.2",
+    "svelte": "^5.57.1"
+  },
+  "devDependencies": {
+    "@shift-stack/core": "workspace:*",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "svelte-check": "^4.7.6",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "vite": "^8.3.1"
+  }
+}

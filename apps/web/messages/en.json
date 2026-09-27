@@ -1,0 +1,66 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "app_name": "Todos",
+  "app_demo": "A demo of SHiFT",
+  "language": "Language",
+  "settings": "Settings",
+  "done": "Done",
+  "menu": "Menu",
+  "search": "Search",
+  "sidebar_pages": "Pages",
+  "no_results": "No Results",
+  "appearance": "Appearance",
+  "theme_system": "Automatic",
+  "theme_light": "Light",
+  "theme_dark": "Dark",
+  "not_found_title": "Page not found",
+  "not_found_body": "There is nothing at this address.",
+  "error_title": "Something went wrong",
+  "error_body": "The server could not handle this request. Try again.",
+  "error_home": "Back to Today",
+  "tab_today": "Today",
+  "tab_calendar": "Calendar",
+  "tab_lists": "Lists",
+  "smart_today": "Today",
+  "smart_scheduled": "Scheduled",
+  "smart_all": "All",
+  "smart_flagged": "Flagged",
+  "smart_completed": "Completed",
+  "my_lists": "My Lists",
+  "overdue": "Overdue",
+  "new_task": "New Task",
+  "new_list": "New List",
+  "list_name": "Name",
+  "list_name_invalid": "Give the list a name of up to 60 characters.",
+  "list_color": "Colour",
+  "list_icon": "Symbol",
+  "create": "Create",
+  "cancel": "Cancel",
+  "nothing_today": "Nothing due today.",
+  "nothing_here": "No tasks.",
+  "completed_count": [
+    {
+      "declarations": [
+        "input count",
+        "local n = count: plural"
+      ],
+      "selectors": [
+        "n"
+      ],
+      "match": {
+        "n=one": "{count} Completed",
+        "n=other": "{count} Completed"
+      }
+    }
+  ],
+  "task_completed": "Completed “{title}”",
+  "undo": "Undo",
+  "complete_task": "Complete",
+  "reopen_task": "Mark as not done",
+  "repeats": "Repeats",
+  "flagged": "Flagged",
+  "priority_label": "Priority",
+  "about": "About",
+  "about_source": "Source Code",
+  "about_footer": "Todos is a demo app for SHiFT, an open-source stack: Svelte rendered on the server, HTMX and islands, on Effect. Tasks are kept in memory and reset when the server restarts."
+}

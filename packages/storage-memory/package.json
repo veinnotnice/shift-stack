@@ -1,0 +1,14 @@
+{
+  "name": "@testin/storage-memory",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": {
+    "check": "tsc -p ."
+  },
+  "dependencies": {
+    "@testin/data": "workspace:*",
+    "@testin/domain": "workspace:*",
+    "effect": "^3.22.2"
+  }
+}

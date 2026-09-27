@@ -1,0 +1,376 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn-svelte/tailwind.css";
+/* Class names used by the components in this package. Apps import this file and add their own sources. */
+@source "../";
+
+/* dark: for component classes. The same rule as the tokens: a chosen theme, else the phone's setting. */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+}
+
+/* The look: iOS. System colours, the system font (SF Pro on Apple devices), Apple's text styles, inset grouped
+   lists, and translucent material only where iOS uses it: the bars that float over content.
+   The tokens keep shadcn's names, so every shadcn component picks the theme up. */
+
+@theme inline {
+  --font-sans: system-ui, -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-row-highlight: var(--row-highlight);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* iOS system colours for status and accents. */
+  --color-mint: var(--mint);
+  --color-coral: var(--coral);
+  --color-violet: var(--violet);
+  --color-sky: var(--sky);
+  --color-amber: var(--amber);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.3);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-3xl: calc(var(--radius) * 2.25);
+  --radius-4xl: calc(var(--radius) * 2.75);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Every colour is light-dark(light, dark); color-scheme picks one. It follows the phone unless the
+   settings sheet chose a theme: the server renders that choice as <html data-theme> (no flash). */
+:root {
+  color-scheme: light dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Apple's values: systemGroupedBackground, secondarySystemGroupedBackground, label, secondaryLabel,
+   tertiaryLabel, separator, the fills, systemBlue and friends, systemGray4 for pressed rows. */
+:root {
+  --background: light-dark(#f2f2f7, #000000);
+  --foreground: light-dark(#000000, #ffffff);
+  --card: light-dark(#ffffff, #1c1c1e);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(#ffffff, #2c2c2e);
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(#007aff, #0a84ff);
+  --primary-foreground: #ffffff;
+  --secondary: light-dark(rgb(120 120 128 / 0.16), rgb(120 120 128 / 0.32));
+  --secondary-foreground: var(--foreground);
+  --muted: light-dark(rgb(118 118 128 / 0.12), rgb(118 118 128 / 0.24));
+  --muted-foreground: light-dark(rgb(60 60 67 / 0.6), rgb(235 235 245 / 0.6));
+  --tertiary-foreground: light-dark(rgb(60 60 67 / 0.3), rgb(235 235 245 / 0.3));
+  --accent: light-dark(rgb(116 116 128 / 0.08), rgb(118 118 128 / 0.18));
+  --accent-foreground: var(--foreground);
+  --destructive: light-dark(#ff3b30, #ff453a);
+  --border: light-dark(rgb(60 60 67 / 0.29), rgb(84 84 88 / 0.6));
+  --input: light-dark(rgb(118 118 128 / 0.12), rgb(118 118 128 / 0.24));
+  --ring: var(--primary);
+  --row-highlight: light-dark(#d1d1d6, #3a3a3c);
+
+  --mint: light-dark(#34c759, #30d158);
+  --coral: light-dark(#ff3b30, #ff453a);
+  --violet: light-dark(#5856d6, #5e5ce6);
+  --sky: light-dark(#32ade6, #64d2ff);
+  --amber: light-dark(#ff9500, #ff9f0a);
+
+  --chart-1: var(--primary);
+  --chart-2: var(--sky);
+  --chart-3: var(--violet);
+  --chart-4: var(--amber);
+  --chart-5: var(--mint);
+  --radius: 0.75rem;
+
+  --sidebar: light-dark(#f2f2f7, #1c1c1e);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--row-highlight);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  --shade: #000000;
+  --raised: light-dark(#ffffff, #2c2c2e);
+  --well: var(--input);
+  /* The iOS system colours a list can have (domain/list.ts: listColors). */
+  --ios-red: light-dark(#ff3b30, #ff453a);
+  --ios-orange: light-dark(#ff9500, #ff9f0a);
+  --ios-yellow: light-dark(#ffcc00, #ffd60a);
+  --ios-green: light-dark(#34c759, #30d158);
+  --ios-mint: light-dark(#00c7be, #63e6e2);
+  --ios-teal: light-dark(#30b0c7, #40c8e0);
+  --ios-blue: light-dark(#007aff, #0a84ff);
+  --ios-indigo: light-dark(#5856d6, #5e5ce6);
+  --ios-purple: light-dark(#af52de, #bf5af2);
+  --ios-pink: light-dark(#ff2d55, #ff375f);
+  --ios-brown: light-dark(#a2845e, #ac8e68);
+  --ios-gray: #8e8e93;
+
+  /* Elevated: what iOS uses for sheets. In dark mode a sheet is lighter than the black page behind it, and the
+     cells inside it lighter again, so it reads as a layer on top. */
+  --elevated-background: light-dark(#f2f2f7, #1c1c1e);
+  --elevated-card: light-dark(#ffffff, #2c2c2e);
+  /* Bar material: what the top bar, the tab bar and banners are made of. */
+  --material: light-dark(rgb(249 249 249 / 0.78), rgb(22 22 24 / 0.74));
+  --material-thick: light-dark(rgb(255 255 255 / 0.72), rgb(44 44 46 / 0.72));
+}
+
+/* ── Apple's text styles (size / leading / tracking, SF Pro's own values) ─────────────────────────────── */
+@utility text-large-title {
+  font-size: 34px;
+  line-height: 41px;
+  letter-spacing: 0.011em;
+  font-weight: 700;
+}
+@utility text-title2 {
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.012em;
+  font-weight: 700;
+}
+@utility text-headline {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+@utility text-body {
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+}
+@utility text-callout {
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.019em;
+}
+@utility text-subheadline {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.015em;
+}
+@utility text-footnote {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.006em;
+}
+@utility text-caption2 {
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.006em;
+}
+
+/* ── iOS building blocks ──────────────────────────────────────────────────────────────────────────── */
+
+/* An inset grouped list: white cells on the grouped background, hairlines inset under the text. */
+@utility ios-list {
+  background-color: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  @supports (corner-shape: squircle) {
+    corner-shape: squircle;
+    border-radius: 20px;
+  }
+}
+
+/* A row: 44pt tall at least, 16pt in from the edge; a pressed link or button row greys like UITableView. */
+@utility ios-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 11px 16px;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.025em;
+  -webkit-user-select: none;
+  user-select: none;
+  &:is(a, button):active {
+    background-color: var(--row-highlight);
+  }
+  /* The separator: half a point, starting where the text starts. */
+  & + &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline: var(--separator-inset, 16px) 0;
+    height: 1px;
+    transform: scaleY(0.5);
+    transform-origin: top;
+    background-color: var(--border);
+  }
+}
+
+/* Section header and footer around a list, aligned with the row text. */
+@utility ios-section-header {
+  padding: 0 16px 7px;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.006em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+@utility ios-section-footer {
+  padding: 7px 16px 0;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.006em;
+  color: var(--muted-foreground);
+}
+
+/* Glass: the translucent material of things that float over content. */
+@utility glass {
+  background-color: var(--material-thick);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    inset 0 0 0 0.5px light-dark(rgb(0 0 0 / 0.06), rgb(255 255 255 / 0.1)),
+    0 8px 28px -6px light-dark(rgb(0 0 0 / 0.14), rgb(0 0 0 / 0.5));
+}
+
+/* Kept from the flat theme: shadcn components (the sidebar) and the old names still use them. */
+@utility surface {
+  background-color: var(--card);
+}
+@utility surface-raised {
+  background-color: var(--raised);
+}
+@utility surface-inset {
+  background-color: var(--well);
+}
+@utility clay-* {
+  background-color: --value(--color-*);
+}
+@utility tint-* {
+  background-color: color-mix(in srgb, --value(--color-*), transparent 86%);
+  color: --value(--color-*);
+}
+
+/* pressable: the small give of a native control under a finger. */
+@utility pressable {
+  transition:
+    transform 160ms cubic-bezier(0.2, 0, 0, 1),
+    opacity 160ms;
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-body text-foreground antialiased;
+  }
+  /* A form's submit button waits until the form is valid, as iOS greys Done until there is something to save.
+     Works without JavaScript, so server-rendered forms get it too. */
+  form:invalid :is(button, input)[type="submit"] {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
+
+/* ── The top bar: see-through over the large title, iOS material once the page scrolls under it ────── */
+
+/* Large title → bar title, driven by scroll alone: the large title eases away as the page moves up,
+   the small title and the bar's material arrive once it has gone. */
+@supports (animation-timeline: scroll()) {
+  .large-title {
+    transform-origin: 0 100%;
+    animation: large-title-away linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 52px;
+  }
+  .bar-title {
+    opacity: 0;
+    animation: bar-title-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 36px 64px;
+  }
+  .top-bar {
+    animation: bar-material-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 20px 64px;
+  }
+}
+@keyframes large-title-away {
+  to {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+@keyframes bar-title-in {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bar-material-in {
+  to {
+    background-color: var(--material);
+    box-shadow: 0 0.5px 0 var(--border);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+  }
+}
+
+/* Toasts are banners of the same material. */
+[data-sonner-toast][data-styled="true"] {
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pressable:active {
+    transform: none;
+  }
+}

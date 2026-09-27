@@ -1,0 +1,42 @@
+{
+  "name": "@shift-stack/core",
+  "version": "0.1.0",
+  "description": "SHiFT: Svelte + Hypermedia + islands + eFfect + TypeScript. Server-rendered Svelte on Effect, swapped by HTMX, with hydrated islands.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/protocol.ts",
+    "./server": "./src/server/index.ts",
+    "./server/dev": "./src/server/dev.ts",
+    "./views": "./src/views/index.ts",
+    "./client": "./src/client/index.ts",
+    "./vite": "./src/vite.ts",
+    "./attributes": { "types": "./src/attributes.d.ts" }
+  },
+  "imports": {
+    "#protocol": "./src/protocol.ts"
+  },
+  "scripts": {
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "htmx.org": "^2.0.11"
+  },
+  "peerDependencies": {
+    "@effect/platform": "^0.97.2",
+    "@effect/platform-node": "^0.108.2",
+    "effect": "^3.22.2",
+    "svelte": "^5.57.1",
+    "vite": "^8.3.1"
+  },
+  "devDependencies": {
+    "@effect/platform": "^0.97.2",
+    "@effect/platform-node": "^0.108.2",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "effect": "^3.22.2",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.7.6",
+    "vite": "^8.3.1"
+  }
+}

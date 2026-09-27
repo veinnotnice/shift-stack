@@ -1,0 +1,26 @@
+{
+  "name": "@shift-stack/paraglide",
+  "version": "0.1.0",
+  "description": "Localization for SHiFT with Paraglide JS: locale-prefixed URLs, the request's locale in views and links.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./server": "./src/server.ts",
+    "./views": "./src/views.ts"
+  },
+  "scripts": {
+    "check": "tsc -p .",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@effect/platform": "^0.97.2",
+    "@shift-stack/core": "workspace:^",
+    "effect": "^3.22.2"
+  },
+  "devDependencies": {
+    "@effect/platform": "^0.97.2",
+    "@shift-stack/core": "workspace:*",
+    "effect": "^3.22.2",
+    "svelte": "^5.57.1"
+  }
+}

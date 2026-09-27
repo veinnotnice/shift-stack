@@ -1,0 +1,18 @@
+{
+  "name": "@testin/services",
+  "private": true,
+  "type": "module",
+  "exports": { "./*": "./src/*.ts" },
+  "scripts": {
+    "check": "tsc -p .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@testin/data": "workspace:*",
+    "@testin/domain": "workspace:*",
+    "effect": "^3.22.2"
+  },
+  "devDependencies": {
+    "@testin/storage-memory": "workspace:*"
+  }
+}

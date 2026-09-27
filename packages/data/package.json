@@ -1,0 +1,13 @@
+{
+  "name": "@testin/data",
+  "private": true,
+  "type": "module",
+  "exports": { "./*": "./src/*.ts" },
+  "scripts": {
+    "check": "tsc -p ."
+  },
+  "dependencies": {
+    "@testin/domain": "workspace:*",
+    "effect": "^3.22.2"
+  }
+}

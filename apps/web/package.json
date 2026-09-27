@@ -1,0 +1,43 @@
+{
+  "name": "@testin/web",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#backend/*": "./src/backend/*",
+    "#frontend/*": "./src/frontend/*",
+    "#lib/*": "./src/frontend/lib/*",
+    "#shared/*": "./src/shared/*"
+  },
+  "scripts": {
+    "dev": "tsx scripts/compile-messages.ts && tsx watch --clear-screen=false src/backend/main/dev.ts",
+    "build": "vite build && vite build --ssr src/backend/main/prod.ts --outDir dist/server",
+    "start": "node dist/server/prod.js",
+    "check": "tsx scripts/compile-messages.ts && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.97.2",
+    "@effect/platform-node": "^0.108.2",
+    "@inlang/paraglide-js": "^2.25.4",
+    "effect": "^3.22.2",
+    "svelte": "^5.57.1"
+  },
+  "devDependencies": {
+    "@internationalized/date": "^3.12.4",
+    "@lucide/svelte": "^1.48.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@testin/domain": "workspace:*",
+    "@testin/services": "workspace:*",
+    "@testin/storage-memory": "workspace:*",
+    "@testin/ui": "workspace:*",
+    "@shift-stack/core": "workspace:*",
+    "@shift-stack/paraglide": "workspace:*",
+    "htmx.org": "^2.0.11",
+    "svelte-check": "^4.7.6",
+    "svelte-sonner": "^1.2.1",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "vite": "^8.3.1"
+  }
+}
