@@ -2,13 +2,37 @@
   "name": "@shift-stack/paraglide",
   "version": "0.1.0",
   "description": "Localization for SHiFT with Paraglide JS: locale-prefixed URLs, the request's locale in views and links.",
-  "private": true,
+  "license": "MIT",
+  "author": "veinnotnice",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veinnotnice/shift-stack.git",
+    "directory": "shift/paraglide"
+  },
+  "homepage": "https://github.com/veinnotnice/shift-stack/tree/main/shift/paraglide#readme",
+  "bugs": "https://github.com/veinnotnice/shift-stack/issues",
+  "keywords": ["svelte", "htmx", "effect", "paraglide", "i18n", "shift-stack"],
   "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": ["dist"],
   "exports": {
     "./server": "./src/server.ts",
     "./views": "./src/views.ts"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      "./server": { "types": "./dist/server.d.ts", "default": "./dist/server.js" },
+      "./views": { "types": "./dist/views.d.ts", "default": "./dist/views.js" }
+    }
+  },
   "scripts": {
+    "build": "svelte-package -i src -o dist",
+    "prepack": "pnpm build",
     "check": "tsc -p .",
     "test": "vitest run"
   },
@@ -20,6 +44,7 @@
   "devDependencies": {
     "@effect/platform": "^0.97.2",
     "@shift-stack/core": "workspace:*",
+    "@sveltejs/package": "^2.5.8",
     "effect": "^3.22.2",
     "svelte": "^5.57.1"
   }

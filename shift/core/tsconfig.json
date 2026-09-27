@@ -1,5 +1,5 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "types": ["node", "vite/client"] },
+  "compilerOptions": { "types": ["node", "vite/client"], "rewriteRelativeImportExtensions": true },
   "include": ["src", "tests", "vitest.config.ts"]
 }

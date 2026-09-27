@@ -1,0 +1,16 @@
+name: Idea
+description: Something SHiFT could do, or do differently.
+labels: [idea]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you are trying to do
+      description: The app you are building and where SHiFT gets in the way. The need first, then the solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How it could work. Keep in mind that the server owns the state and islands only the interaction.

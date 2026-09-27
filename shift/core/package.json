@@ -2,13 +2,27 @@
   "name": "@shift-stack/core",
   "version": "0.1.0",
   "description": "SHiFT: Svelte + Hypermedia + islands + eFfect + TypeScript. Server-rendered Svelte on Effect, swapped by HTMX, with hydrated islands.",
-  "private": true,
+  "license": "MIT",
+  "author": "veinnotnice",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veinnotnice/shift-stack.git",
+    "directory": "shift/core"
+  },
+  "homepage": "https://github.com/veinnotnice/shift-stack/tree/main/shift/core#readme",
+  "bugs": "https://github.com/veinnotnice/shift-stack/issues",
+  "keywords": ["svelte", "htmx", "effect", "islands", "ssr", "hypermedia"],
   "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=24"
+  },
+  "files": ["dist"],
   "exports": {
     ".": "./src/protocol.ts",
     "./server": "./src/server/index.ts",
     "./server/dev": "./src/server/dev.ts",
-    "./views": "./src/views/index.ts",
+    "./views": { "svelte": "./src/views/index.ts", "default": "./src/views/index.ts" },
     "./client": "./src/client/index.ts",
     "./vite": "./src/vite.ts",
     "./attributes": { "types": "./src/attributes.d.ts" }
@@ -16,7 +30,25 @@
   "imports": {
     "#protocol": "./src/protocol.ts"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "exports": {
+      ".": { "types": "./dist/protocol.d.ts", "default": "./dist/protocol.js" },
+      "./server": { "types": "./dist/server/index.d.ts", "default": "./dist/server/index.js" },
+      "./server/dev": { "types": "./dist/server/dev.d.ts", "default": "./dist/server/dev.js" },
+      "./views": { "types": "./dist/views/index.d.ts", "svelte": "./dist/views/index.js", "default": "./dist/views/index.js" },
+      "./client": { "types": "./dist/client/index.d.ts", "default": "./dist/client/index.js" },
+      "./vite": { "types": "./dist/vite.d.ts", "default": "./dist/vite.js" },
+      "./attributes": { "types": "./dist/attributes.d.ts" }
+    },
+    "imports": {
+      "#protocol": "./dist/protocol.js"
+    }
+  },
   "scripts": {
+    "build": "svelte-package -i src -o dist && node scripts/finish-dist.ts",
+    "prepack": "pnpm build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run"
   },
@@ -33,6 +65,7 @@
   "devDependencies": {
     "@effect/platform": "^0.97.2",
     "@effect/platform-node": "^0.108.2",
+    "@sveltejs/package": "^2.5.8",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "effect": "^3.22.2",
     "svelte": "^5.57.1",
