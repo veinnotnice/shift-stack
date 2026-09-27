@@ -24,7 +24,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": true,
     "exports": {
       "./server": { "types": "./dist/server.d.ts", "default": "./dist/server.js" },
       "./views": { "types": "./dist/views.d.ts", "default": "./dist/views.js" }

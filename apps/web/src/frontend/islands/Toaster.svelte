@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Toaster } from "@testin/ui/sonner"
+  import { Toaster } from "@todos/ui/sonner"
   import type { Theme } from "#shared/theme.ts"
   import { onMount } from "svelte"
   import { toast } from "svelte-sonner"

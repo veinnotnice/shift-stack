@@ -7,15 +7,19 @@
   },
   "packageManager": "pnpm@10.33.4",
   "scripts": {
-    "dev": "pnpm --filter @testin/web dev",
+    "dev": "pnpm --filter @todos/web dev",
     "dev:minimal": "pnpm --filter @shift-stack/minimal dev",
-    "build": "pnpm --filter @testin/web build",
-    "start": "pnpm --filter @testin/web start",
+    "build": "pnpm --filter @todos/web build",
+    "start": "pnpm --filter @todos/web start",
     "check": "pnpm -r check",
     "test": "pnpm -r test",
-    "e2e": "pnpm --filter @shift-stack/e2e e2e"
+    "e2e": "pnpm --filter @shift-stack/e2e e2e",
+    "changeset": "changeset",
+    "version-packages": "changeset version && pnpm install --lockfile-only",
+    "release": "node scripts/release.ts"
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.3",
     "@types/node": "^24",
     "typescript": "^6.0.3",
     "vitest": "^5.0.2"

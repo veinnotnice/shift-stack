@@ -1,9 +1,9 @@
 import { Effect } from "effect"
 import { describe, expect, it } from "vitest"
-import { CalendarDate, TimeOfDay } from "@testin/domain/calendar"
-import { ListId } from "@testin/domain/list"
-import { TaskId } from "@testin/domain/task"
-import { TaskService } from "@testin/services/TaskService"
+import { CalendarDate, TimeOfDay } from "@todos/domain/calendar"
+import { ListId } from "@todos/domain/list"
+import { TaskId } from "@todos/domain/task"
+import { TaskService } from "@todos/services/TaskService"
 import { failure, inbox, now, run, work } from "./harness.ts"
 
 const on = (date: string, time: string | null = null) => ({

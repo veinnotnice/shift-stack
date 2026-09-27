@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte"
-  import * as Drawer from "@testin/ui/drawer"
+  import * as Drawer from "@todos/ui/drawer"
 
   // The sidebar: a drawer from the left, which the finger can drag shut. Rendered once by the shell, outside the top
   // bar, so it survives navigation and can slide away while the next page loads. Its content (SidebarNav) is server

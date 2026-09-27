@@ -21,8 +21,9 @@ The code runs in three places that don't share modules, plus the build:
 | `@shift-stack/core/client`     | the browser                                | `start`: HTMX and island hydration                          |
 | `@shift-stack/core/vite`       | `vite.config.ts`                           | the `shift` plugin                                          |
 
-`@shift-stack/core` itself holds the constants all four agree on (`contentTarget`, …). It has no side effects, so
-islands can import it. `@shift-stack/core/attributes` is types only: import it once from a `.d.ts` of the app, and
+`@shift-stack/core` itself holds the constants all four agree on (`contentTarget`, `layoutHeader`, `refreshEvent`) and
+the types that describe an app to SHiFT (`ViewContext`, `FrontendConfig`, …). It has no side effects, so islands can
+import it. `@shift-stack/core/attributes` is types only: import it once from a `.d.ts` of the app, and
 views may use `hx-*` attributes on any element.
 
 ## Setting up an app

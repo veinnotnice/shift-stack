@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
-import { CalendarDate } from "@testin/domain/calendar"
-import { nextOccurrence } from "@testin/domain/recurrence"
+import { CalendarDate } from "@todos/domain/calendar"
+import { nextOccurrence } from "@todos/domain/recurrence"
 
 const d = CalendarDate.make
 // 2026-09-28 is a Monday.

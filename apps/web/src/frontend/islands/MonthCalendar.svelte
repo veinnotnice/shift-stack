@@ -1,10 +1,10 @@
 <script lang="ts">
   import { parseDate, type DateValue } from "@internationalized/date"
   import type { Snippet } from "svelte"
-  import type { ListColor } from "@testin/domain/list"
+  import type { ListColor } from "@todos/domain/list"
   import { listColor } from "#lib/list-style.ts"
-  import { Calendar } from "@testin/ui/calendar"
-  import * as CalendarParts from "@testin/ui/calendar"
+  import { Calendar } from "@todos/ui/calendar"
+  import * as CalendarParts from "@todos/ui/calendar"
   import { getLocale } from "#shared/paraglide/runtime.js"
 
   // The month on the Calendar screen: the shadcn Calendar, with dots in the list colours under days that have

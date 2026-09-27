@@ -1,5 +1,5 @@
 {
-  "name": "@testin/web",
+  "name": "@todos/web",
   "private": true,
   "type": "module",
   "imports": {
@@ -27,10 +27,10 @@
     "@lucide/svelte": "^1.48.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@testin/domain": "workspace:*",
-    "@testin/services": "workspace:*",
-    "@testin/storage-memory": "workspace:*",
-    "@testin/ui": "workspace:*",
+    "@todos/domain": "workspace:*",
+    "@todos/services": "workspace:*",
+    "@todos/storage-memory": "workspace:*",
+    "@todos/ui": "workspace:*",
     "@shift-stack/core": "workspace:*",
     "@shift-stack/paraglide": "workspace:*",
     "htmx.org": "^2.0.11",

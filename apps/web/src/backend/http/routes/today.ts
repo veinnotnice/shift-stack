@@ -1,11 +1,11 @@
 // The Today screen: what is overdue, then what is due today.
 import { HttpRouter } from "@effect/platform"
 import { Effect } from "effect"
-import { isOverdue } from "@testin/domain/schedule"
+import { isOverdue } from "@todos/domain/schedule"
 import { page } from "#backend/rendering/respond.ts"
-import { ListService } from "@testin/services/ListService"
-import { TaskService } from "@testin/services/TaskService"
-import { today } from "@testin/services/today"
+import { ListService } from "@todos/services/ListService"
+import { TaskService } from "@todos/services/TaskService"
+import { today } from "@todos/services/today"
 
 export const todayRoutes = HttpRouter.empty.pipe(
   HttpRouter.get(

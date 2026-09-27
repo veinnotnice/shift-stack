@@ -1,6 +1,6 @@
 <script lang="ts">
   import Search from "@lucide/svelte/icons/search"
-  import * as Sidebar from "@testin/ui/sidebar"
+  import * as Sidebar from "@todos/ui/sidebar"
   import { navIcons } from "#lib/nav-icons.ts"
   import { m } from "#shared/paraglide/messages.js"
   import type { Chrome } from "./chrome.ts"

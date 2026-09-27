@@ -1,12 +1,12 @@
 // The Calendar screen: a month with a mark on every day that has tasks, and the chosen day's tasks below.
 import { HttpRouter, HttpServerRequest, HttpServerResponse } from "@effect/platform"
 import { Effect, Option, Schema } from "effect"
-import { addDays, CalendarDate, startOfMonth, startOfWeek } from "@testin/domain/calendar"
-import type { ListColor } from "@testin/domain/list"
+import { addDays, CalendarDate, startOfMonth, startOfWeek } from "@todos/domain/calendar"
+import type { ListColor } from "@todos/domain/list"
 import { page } from "#backend/rendering/respond.ts"
-import { ListService } from "@testin/services/ListService"
-import { TaskService } from "@testin/services/TaskService"
-import { today } from "@testin/services/today"
+import { ListService } from "@todos/services/ListService"
+import { TaskService } from "@todos/services/TaskService"
+import { today } from "@todos/services/today"
 import { href } from "@shift-stack/core/server"
 
 // The month grid shows six weeks from the Monday before the 1st.

@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { CalendarDate } from "@testin/domain/calendar"
-  import type { TaskList } from "@testin/domain/list"
-  import { groupByDay } from "@testin/domain/schedule"
-  import type { Task } from "@testin/domain/task"
+  import type { CalendarDate } from "@todos/domain/calendar"
+  import type { TaskList } from "@todos/domain/list"
+  import { groupByDay } from "@todos/domain/schedule"
+  import type { Task } from "@todos/domain/task"
   import { dayLabel } from "#lib/dates.ts"
   import { m } from "#shared/paraglide/messages.js"
   import TaskRow from "#frontend/views/components/TaskRow.svelte"

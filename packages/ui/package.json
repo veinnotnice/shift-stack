@@ -1,5 +1,5 @@
 {
-  "name": "@testin/ui",
+  "name": "@todos/ui",
   "private": true,
   "type": "module",
   "exports": {

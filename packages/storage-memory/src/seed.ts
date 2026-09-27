@@ -1,7 +1,7 @@
 // Something to look at on first start: a few lists and tasks, dated relative to today so every screen has content.
-import { addDays, type CalendarDate, TimeOfDay } from "@testin/domain/calendar"
-import { ListId, type TaskList } from "@testin/domain/list"
-import { SubtaskId, TaskId, type Task } from "@testin/domain/task"
+import { addDays, type CalendarDate, TimeOfDay } from "@todos/domain/calendar"
+import { ListId, type TaskList } from "@todos/domain/list"
+import { SubtaskId, TaskId, type Task } from "@todos/domain/task"
 
 export const seed = (today: CalendarDate, now: number): { lists: TaskList[]; tasks: Task[] } => {
   const personal = ListId.make("personal")

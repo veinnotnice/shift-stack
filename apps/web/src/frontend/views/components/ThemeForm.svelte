@@ -1,5 +1,5 @@
 <script lang="ts">
-  import * as ToggleGroup from "@testin/ui/toggle-group"
+  import * as ToggleGroup from "@todos/ui/toggle-group"
   import { m } from "#shared/paraglide/messages.js"
   import { localizeHref } from "#shared/paraglide/runtime.js"
   import { themes, type Theme } from "#shared/theme.ts"

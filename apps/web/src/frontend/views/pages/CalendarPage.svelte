@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { CalendarDate } from "@testin/domain/calendar"
-  import type { ListColor, TaskList } from "@testin/domain/list"
-  import type { Task } from "@testin/domain/task"
+  import type { CalendarDate } from "@todos/domain/calendar"
+  import type { ListColor, TaskList } from "@todos/domain/list"
+  import type { Task } from "@todos/domain/task"
   import { dayLabel } from "#lib/dates.ts"
   import { m } from "#shared/paraglide/messages.js"
   import { localizeHref } from "#shared/paraglide/runtime.js"

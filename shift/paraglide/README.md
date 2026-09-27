@@ -4,6 +4,10 @@ Localization for [SHiFT](../core) with [Paraglide JS](https://inlang.com/m/gerre
 Every page lives under its locale's prefix (`/en/…`, `/de/…`). A request without one is redirected to the locale
 your Paraglide strategies pick (cookie, `Accept-Language`, base locale). Routes are written once, without the prefix.
 
+```
+npm install @shift-stack/paraglide @inlang/paraglide-js
+```
+
 It doesn't depend on Paraglide itself. You pass your compiled runtime, since Paraglide generates one per project.
 Configure Paraglide with the `url` strategy and `/:locale/…` URL patterns.
 

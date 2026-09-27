@@ -1,12 +1,12 @@
 <script lang="ts">
   import Plus from "@lucide/svelte/icons/plus"
-  import type { CalendarDate } from "@testin/domain/calendar"
-  import type { TaskList } from "@testin/domain/list"
-  import type { Task } from "@testin/domain/task"
+  import type { CalendarDate } from "@todos/domain/calendar"
+  import type { TaskList } from "@todos/domain/list"
+  import type { Task } from "@todos/domain/task"
   import { listColor } from "#lib/list-style.ts"
   import { m } from "#shared/paraglide/messages.js"
   import { localizeHref } from "#shared/paraglide/runtime.js"
-  import { Input } from "@testin/ui/input"
+  import { Input } from "@todos/ui/input"
   import TaskRow from "./TaskRow.svelte"
 
   // A list's open tasks and the row to add one. Sits inside an ios-list; `oob` sends it along with another

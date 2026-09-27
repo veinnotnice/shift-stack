@@ -1,7 +1,7 @@
 <script lang="ts">
   import ArrowUpRight from "@lucide/svelte/icons/arrow-up-right"
   import Check from "@lucide/svelte/icons/check"
-  import { buttonVariants } from "@testin/ui/button"
+  import { buttonVariants } from "@todos/ui/button"
   import { m } from "#shared/paraglide/messages.js"
   import type { Chrome } from "#frontend/views/chrome.ts"
   import ThemeForm from "./ThemeForm.svelte"

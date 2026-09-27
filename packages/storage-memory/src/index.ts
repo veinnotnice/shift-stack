@@ -1,6 +1,6 @@
 // In-memory storage for the whole app, filled with the seed data. What main/ provides until there is a database.
 import { Clock, Config, Effect, Layer } from "effect"
-import { calendarDateAt } from "@testin/domain/calendar"
+import { calendarDateAt } from "@todos/domain/calendar"
 import { ListRepositoryMemory, TaskRepositoryMemory } from "./repositories.ts"
 import { seed } from "./seed.ts"
 

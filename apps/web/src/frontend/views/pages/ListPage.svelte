@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { CalendarDate } from "@testin/domain/calendar"
-  import type { TaskList } from "@testin/domain/list"
-  import type { Task } from "@testin/domain/task"
+  import type { CalendarDate } from "@todos/domain/calendar"
+  import type { TaskList } from "@todos/domain/list"
+  import type { Task } from "@todos/domain/task"
   import { listColor } from "#lib/list-style.ts"
   import DoneTasks from "#frontend/views/components/DoneTasks.svelte"
   import OpenTasks from "#frontend/views/components/OpenTasks.svelte"

@@ -1,5 +1,5 @@
 {
-  "name": "@testin/domain",
+  "name": "@todos/domain",
   "private": true,
   "type": "module",
   "exports": { "./*": "./src/*.ts" },

@@ -12,7 +12,7 @@ import Plane from "@lucide/svelte/icons/plane"
 import ShoppingCart from "@lucide/svelte/icons/shopping-cart"
 import Star from "@lucide/svelte/icons/star"
 import type { Component } from "svelte"
-import type { ListColor, ListIcon } from "@testin/domain/list"
+import type { ListColor, ListIcon } from "@todos/domain/list"
 
 /** The CSS colour of a list, following light and dark. */
 export const listColor = (color: ListColor): string => `var(--ios-${color})`

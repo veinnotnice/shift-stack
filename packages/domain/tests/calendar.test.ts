@@ -8,7 +8,7 @@ import {
   daysBetween,
   startOfWeek,
   weekday
-} from "@testin/domain/calendar"
+} from "@todos/domain/calendar"
 
 const d = CalendarDate.make
 

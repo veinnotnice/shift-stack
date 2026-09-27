@@ -1,7 +1,7 @@
 // Data layer: where task lists are kept. Only the interface lives here; infrastructure/ implements it.
 import { Context, type Effect } from "effect"
-import type { ListNotFound } from "@testin/domain/errors"
-import type { ListId, TaskList } from "@testin/domain/list"
+import type { ListNotFound } from "@todos/domain/errors"
+import type { ListId, TaskList } from "@todos/domain/list"
 
 export class ListRepository extends Context.Tag("ListRepository")<
   ListRepository,

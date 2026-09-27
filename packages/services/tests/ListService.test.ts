@@ -1,8 +1,8 @@
 import { Effect } from "effect"
 import { describe, expect, it } from "vitest"
-import { CalendarDate } from "@testin/domain/calendar"
-import { ListService } from "@testin/services/ListService"
-import { TaskService } from "@testin/services/TaskService"
+import { CalendarDate } from "@todos/domain/calendar"
+import { ListService } from "@todos/services/ListService"
+import { TaskService } from "@todos/services/TaskService"
 import { failure, inbox, run, work } from "./harness.ts"
 
 describe("ListService", () => {

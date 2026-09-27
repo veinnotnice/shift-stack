@@ -1,11 +1,11 @@
 // Business logic for task lists: create, change, delete and order them, and the counts the Lists screen shows.
 import { Effect, Schema } from "effect"
-import { ListRepository } from "@testin/data/ListRepository"
-import { TaskRepository } from "@testin/data/TaskRepository"
-import { LastListRemaining } from "@testin/domain/errors"
-import { ListColor, ListIcon, ListName, type ListId, type TaskList } from "@testin/domain/list"
-import { countSmartLists, isOverdue, type SmartList } from "@testin/domain/schedule"
-import { isOpen } from "@testin/domain/task"
+import { ListRepository } from "@todos/data/ListRepository"
+import { TaskRepository } from "@todos/data/TaskRepository"
+import { LastListRemaining } from "@todos/domain/errors"
+import { ListColor, ListIcon, ListName, type ListId, type TaskList } from "@todos/domain/list"
+import { countSmartLists, isOverdue, type SmartList } from "@todos/domain/schedule"
+import { isOpen } from "@todos/domain/task"
 import { newListId, nextPosition, reorderBy } from "./ids.ts"
 import { today } from "./today.ts"
 

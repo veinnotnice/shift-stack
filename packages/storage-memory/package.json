@@ -1,5 +1,5 @@
 {
-  "name": "@testin/storage-memory",
+  "name": "@todos/storage-memory",
   "private": true,
   "type": "module",
   "exports": { ".": "./src/index.ts" },
@@ -7,8 +7,8 @@
     "check": "tsc -p ."
   },
   "dependencies": {
-    "@testin/data": "workspace:*",
-    "@testin/domain": "workspace:*",
+    "@todos/data": "workspace:*",
+    "@todos/domain": "workspace:*",
     "effect": "^3.22.2"
   }
 }

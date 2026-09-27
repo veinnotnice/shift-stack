@@ -1,7 +1,7 @@
 <script lang="ts">
   import PanelLeft from "@lucide/svelte/icons/panel-left"
   import Settings from "@lucide/svelte/icons/settings"
-  import { buttonVariants } from "@testin/ui/button"
+  import { buttonVariants } from "@todos/ui/button"
   import { m } from "#shared/paraglide/messages.js"
   import type { Chrome } from "./chrome.ts"
   import { Island } from "@shift-stack/core/views"

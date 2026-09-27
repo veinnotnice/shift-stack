@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { listColors, listIcons as iconNames, type ListColor, type ListIcon } from "@testin/domain/list"
-  import { buttonVariants } from "@testin/ui/button"
-  import { Input } from "@testin/ui/input"
-  import * as ToggleGroup from "@testin/ui/toggle-group"
+  import { listColors, listIcons as iconNames, type ListColor, type ListIcon } from "@todos/domain/list"
+  import { buttonVariants } from "@todos/ui/button"
+  import { Input } from "@todos/ui/input"
+  import * as ToggleGroup from "@todos/ui/toggle-group"
   import { listColor, listIcons } from "#lib/list-style.ts"
   import { m } from "#shared/paraglide/messages.js"
   import { localizeHref } from "#shared/paraglide/runtime.js"

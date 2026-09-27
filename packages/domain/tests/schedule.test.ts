@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest"
-import { CalendarDate, TimeOfDay } from "@testin/domain/calendar"
-import { ListId } from "@testin/domain/list"
-import { belongsTo, byDue, countSmartLists, groupByDay, isOverdue } from "@testin/domain/schedule"
-import { TaskId, type Task } from "@testin/domain/task"
+import { CalendarDate, TimeOfDay } from "@todos/domain/calendar"
+import { ListId } from "@todos/domain/list"
+import { belongsTo, byDue, countSmartLists, groupByDay, isOverdue } from "@todos/domain/schedule"
+import { TaskId, type Task } from "@todos/domain/task"
 
 const today = CalendarDate.make("2026-09-28")
 

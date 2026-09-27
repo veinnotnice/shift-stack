@@ -1,7 +1,7 @@
 // New ids for the things the services create.
 import { Effect } from "effect"
-import { ListId } from "@testin/domain/list"
-import { SubtaskId, TaskId } from "@testin/domain/task"
+import { ListId } from "@todos/domain/list"
+import { SubtaskId, TaskId } from "@todos/domain/task"
 
 export const newTaskId = Effect.sync(() => TaskId.make(crypto.randomUUID()))
 export const newSubtaskId = Effect.sync(() => SubtaskId.make(crypto.randomUUID()))

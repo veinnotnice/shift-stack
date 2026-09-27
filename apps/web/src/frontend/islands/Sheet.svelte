@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte"
-  import { buttonVariants, type ButtonSize, type ButtonVariant } from "@testin/ui/button"
-  import * as Drawer from "@testin/ui/drawer"
+  import { buttonVariants, type ButtonSize, type ButtonVariant } from "@todos/ui/button"
+  import * as Drawer from "@todos/ui/drawer"
 
   // An iOS sheet around server HTML. The island owns only what happens in the browser: the trigger, the sheet sliding
   // up and away, open or closed. What is in it (a form, links) comes from the server as the children slot, and HTMX

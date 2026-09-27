@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Component } from "svelte"
-  import { buttonVariants } from "@testin/ui/button"
+  import { buttonVariants } from "@todos/ui/button"
   import { contentTarget } from "@shift-stack/core/views"
   import { m } from "#shared/paraglide/messages.js"
   import { localizeHref } from "#shared/paraglide/runtime.js"

@@ -18,17 +18,17 @@ shift/
 ├── paraglide/           @shift-stack/paraglide: the i18n plugin for SHiFT (locale prefix, locale in views).
 └── e2e/                 private: a fixture app on SHiFT and Playwright tests against it (`pnpm e2e`, port 4310).
 packages/
-├── domain/              @testin/domain: business rules, Schema types and pure functions. No I/O, depends on nothing.
-├── data/                @testin/data: what is stored, as interfaces (Context.Tag). No implementation here.
-├── services/            @testin/services: use cases as Effect services. Depend on data interfaces only.
-├── storage-memory/      @testin/storage-memory: the data interfaces in memory (Ref). A database later is a sibling.
-└── ui/                  @testin/ui: the design system.
+├── domain/              @todos/domain: business rules, Schema types and pure functions. No I/O, depends on nothing.
+├── data/                @todos/data: what is stored, as interfaces (Context.Tag). No implementation here.
+├── services/            @todos/services: use cases as Effect services. Depend on data interfaces only.
+├── storage-memory/      @todos/storage-memory: the data interfaces in memory (Ref). A database later is a sibling.
+└── ui/                  @todos/ui: the design system.
     ├── src/components/  shadcn-svelte primitives, restyled to Apple level (see below).
     ├── src/lib/         utils (cn) and hooks the primitives use.
     └── src/styles/      globals.css: tokens, text styles, iOS building blocks.
 apps/
 ├── minimal/             @shift-stack/minimal: the starter. SHiFT and Tailwind only, no design system (`pnpm dev:minimal`).
-└── web/                 @testin/web: Todos, the demo app. the server and its pages. messages/ and project.inlang/ (i18n) live here.
+└── web/                 @todos/web: Todos, the demo app. the server and its pages. messages/ and project.inlang/ (i18n) live here.
     └── src/
         ├── backend/
         │   ├── http/      transport: app.ts wraps the routes in SHiFT, plugins (i18n.ts, theme.ts), routes/.
@@ -39,14 +39,14 @@ apps/
         │   ├── views/     server-rendered Svelte: pages/, components, shell. index.ts is `createViews(…)`.
         │   ├── islands/   Svelte components the browser hydrates. entry.ts calls SHiFT's `start`.
         │   ├── lib/       app helpers (dates, list styles, nav icons).
-        │   └── styles/    app.css: imports @testin/ui/globals.css.
+        │   └── styles/    app.css: imports @todos/ui/globals.css.
         └── shared/        used by both sides: paraglide/ (generated i18n), theme.ts.
 ```
 
 ### Imports
 
-- **Another package:** by name and module, without extension: `@testin/domain/task`, `@testin/services/TaskService`,
-  `@testin/storage-memory`, `@testin/ui/button`, `@testin/ui/utils`, `@shift-stack/core/server`. What a package offers is its `exports` in
+- **Another package:** by name and module, without extension: `@todos/domain/task`, `@todos/services/TaskService`,
+  `@todos/storage-memory`, `@todos/ui/button`, `@todos/ui/utils`, `@shift-stack/core/server`. What a package offers is its `exports` in
   `package.json`. A package's tests import it the same way.
 - **Inside a package:** no relative imports out of a folder. Other folders go through the package's subpath imports
   (`imports` in its `package.json`): `#backend/…`, `#frontend/…`, `#shared/…`, `#lib/…` in `apps/web`; `#ui/…` and
@@ -63,11 +63,11 @@ apps/
   (`services` has `storage-memory` as a dev dependency, for its tests only).
 - **No reaching through:** routes never touch a repository, services never know how data is stored. Swapping the
   storage means a new package next to `packages/storage-memory` and one line in `apps/web/src/backend/main/`.
-- **Errors are values:** services fail with tagged errors from `@testin/domain/errors`; `http/` maps them to responses.
+- **Errors are values:** services fail with tagged errors from `@todos/domain/errors`; `http/` maps them to responses.
 - **Time is injected:** anything about "today" or "overdue" reads Effect's `Clock`, so tests can fix the date.
 - **Tests per layer**, in each package's `tests/`: domain as pure functions, services against the in-memory
   layer with a fixed clock, http through the web handler (`apps/web/tests`).
-- **No database yet.** All data lives in memory behind the `@testin/data` interfaces.
+- **No database yet.** All data lives in memory behind the `@todos/data` interfaces.
 
 ## Design: Apple level, from the primitive up
 
@@ -100,7 +100,7 @@ A component that has not been through step 1 is not used anywhere, not even temp
   `text-caption2`. No ad-hoc font sizes.
 - **Building blocks:** inset grouped lists (`ios-list`, `ios-row`, `ios-section-header`, `ios-section-footer`,
   and `apps/web/src/frontend/views/List.svelte`), bar material (`glass`), squircle corners where the browser supports them.
-- **One shape per kind of thing.** Every button comes from `@testin/ui/button` and is a capsule; variants only change the
+- **One shape per kind of thing.** Every button comes from `@todos/ui/button` and is a capsule; variants only change the
   fill (`default`, `secondary`, `tinted`, `neutral`, `glass`, `plain`, `destructive`). Two buttons never disagree
   on their rounding. Lists, sheets and alerts use Apple's continuous corners.
 - **Quiet chrome.** Top bar items are plain grey glyphs (`neutral`), no circles or fills behind them. The top bar
@@ -141,6 +141,6 @@ A component that has not been through step 1 is not used anywhere, not even temp
 ## Commands
 
 `pnpm dev` · `pnpm dev:minimal` · `pnpm check` · `pnpm test` · `pnpm build` · `pnpm start` · `pnpm e2e`, from the root. `check` and `test` run in
-every package (`pnpm -r`); `e2e` runs SHiFT's browser tests; the others run `apps/web`. One package alone: `pnpm --filter @testin/services test`.
+every package (`pnpm -r`); `e2e` runs SHiFT's browser tests; the others run `apps/web`. One package alone: `pnpm --filter @todos/services test`.
 
 Commit on `main`.

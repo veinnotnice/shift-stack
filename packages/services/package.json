@@ -1,5 +1,5 @@
 {
-  "name": "@testin/services",
+  "name": "@todos/services",
   "private": true,
   "type": "module",
   "exports": { "./*": "./src/*.ts" },
@@ -8,11 +8,11 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@testin/data": "workspace:*",
-    "@testin/domain": "workspace:*",
+    "@todos/data": "workspace:*",
+    "@todos/domain": "workspace:*",
     "effect": "^3.22.2"
   },
   "devDependencies": {
-    "@testin/storage-memory": "workspace:*"
+    "@todos/storage-memory": "workspace:*"
   }
 }

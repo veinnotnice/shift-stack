@@ -1,13 +1,13 @@
 // The Lists screen, one list, the smart lists, and adding lists and tasks.
 import { HttpRouter, HttpServerRequest, HttpServerResponse } from "@effect/platform"
 import { Effect, Option, Schema } from "effect"
-import { ListColor, ListIcon, ListId } from "@testin/domain/list"
-import { TaskTitle } from "@testin/domain/task"
+import { ListColor, ListIcon, ListId } from "@todos/domain/list"
+import { TaskTitle } from "@todos/domain/task"
 import { htmlResponse, navigateTo } from "@shift-stack/core/server"
 import { fragment, page } from "#backend/rendering/respond.ts"
-import { ListService, NewList } from "@testin/services/ListService"
-import { TaskService } from "@testin/services/TaskService"
-import { today } from "@testin/services/today"
+import { ListService, NewList } from "@todos/services/ListService"
+import { TaskService } from "@todos/services/TaskService"
+import { today } from "@todos/services/today"
 
 const ListParams = Schema.Struct({ listId: ListId })
 // Today has its own screen at "/".

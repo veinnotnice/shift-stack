@@ -1,2 +1,2 @@
-/* The app's stylesheet: the iOS design system from @testin/ui. Tailwind finds the app's own classes itself. */
-@import "@testin/ui/globals.css";
+/* The app's stylesheet: the iOS design system from @todos/ui. Tailwind finds the app's own classes itself. */
+@import "@todos/ui/globals.css";

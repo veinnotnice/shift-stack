@@ -34,6 +34,7 @@ The first `pnpm e2e` may ask you to run `pnpm --filter @shift-stack/e2e exec pla
 ## Pull requests
 
 - One change per pull request, with a test where it can have one.
+- A change to a published package comes with a changeset: `pnpm changeset` (see [.changeset](.changeset)).
 - `pnpm check` and `pnpm test` pass; `pnpm e2e` too when the client or the views changed.
 - Commit messages in English, imperative mood, saying what changes and why.
 - The public API of a package is its `exports`. Changing it is a breaking change, even in `0.x`: say so in the PR.

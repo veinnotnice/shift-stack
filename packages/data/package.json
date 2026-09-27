@@ -1,5 +1,5 @@
 {
-  "name": "@testin/data",
+  "name": "@todos/data",
   "private": true,
   "type": "module",
   "exports": { "./*": "./src/*.ts" },
@@ -7,7 +7,7 @@
     "check": "tsc -p ."
   },
   "dependencies": {
-    "@testin/domain": "workspace:*",
+    "@todos/domain": "workspace:*",
     "effect": "^3.22.2"
   }
 }

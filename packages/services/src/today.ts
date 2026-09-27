@@ -1,7 +1,7 @@
 // "Today" for the business logic: Effect's Clock, read in the user's time zone. The http layer provides the zone
 // per request; tests fix both.
 import { Clock, Context, Effect } from "effect"
-import { calendarDateAt, type CalendarDate } from "@testin/domain/calendar"
+import { calendarDateAt, type CalendarDate } from "@todos/domain/calendar"
 
 /** The IANA time zone of the person asking, e.g. "Europe/Berlin". */
 export class TimeZone extends Context.Tag("TimeZone")<TimeZone, string>() {}

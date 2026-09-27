@@ -1,5 +1,5 @@
 // How dates and times read on screen, in the current language: "Tomorrow", "Friday", "3 Oct", "18:30".
-import { daysBetween, type CalendarDate, type TimeOfDay } from "@testin/domain/calendar"
+import { daysBetween, type CalendarDate, type TimeOfDay } from "@todos/domain/calendar"
 import { getLocale } from "#shared/paraglide/runtime.js"
 
 // Calendar days carry no zone, so they are formatted at noon UTC and read back in UTC.

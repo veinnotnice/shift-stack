@@ -1,12 +1,12 @@
 // Runs service code the way the app does, but on empty (or given) in-memory storage and a fixed clock:
 // Monday, 28 September 2026, 12:00 in Berlin.
 import { Effect, Layer, TestClock, TestContext } from "effect"
-import { ListId, type TaskList } from "@testin/domain/list"
-import type { Task } from "@testin/domain/task"
-import { ListRepositoryMemory, TaskRepositoryMemory } from "@testin/storage-memory"
-import { ListService } from "@testin/services/ListService"
-import { TaskService } from "@testin/services/TaskService"
-import { TimeZone } from "@testin/services/today"
+import { ListId, type TaskList } from "@todos/domain/list"
+import type { Task } from "@todos/domain/task"
+import { ListRepositoryMemory, TaskRepositoryMemory } from "@todos/storage-memory"
+import { ListService } from "@todos/services/ListService"
+import { TaskService } from "@todos/services/TaskService"
+import { TimeZone } from "@todos/services/today"
 
 export const now = Date.UTC(2026, 8, 28, 10, 0)
 

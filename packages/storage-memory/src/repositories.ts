@@ -1,10 +1,10 @@
 // The data layer's interfaces, implemented in memory. Everything is lost when the process stops.
 import { Effect, Layer } from "effect"
-import { ListRepository } from "@testin/data/ListRepository"
-import { TaskRepository } from "@testin/data/TaskRepository"
-import { ListNotFound, TaskNotFound } from "@testin/domain/errors"
-import type { TaskList } from "@testin/domain/list"
-import type { Task } from "@testin/domain/task"
+import { ListRepository } from "@todos/data/ListRepository"
+import { TaskRepository } from "@todos/data/TaskRepository"
+import { ListNotFound, TaskNotFound } from "@todos/domain/errors"
+import type { TaskList } from "@todos/domain/list"
+import type { Task } from "@todos/domain/task"
 import { makeStore } from "./store.ts"
 
 export const TaskRepositoryMemory = (initial: ReadonlyArray<Task> = []) =>
